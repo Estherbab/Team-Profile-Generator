@@ -4,13 +4,12 @@ class Manager extends Employee{                                          // My m
 constructor(name, id, email, officeNumber){
     super(name, id, email)                                              // inherit the behaviours of these from the parent(Employee)
     this.officeNumber = officeNumber
-}
-getofficeNumber(){
+    }
+    getOfficeNumber(){
     return this.officeNumber
-}
-getRole(){
+    }
+    getRole(){
     return "Manager"
+    }
 }
-}
-
 module.exports=Manager
