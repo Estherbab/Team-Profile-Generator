@@ -8,7 +8,7 @@ this.email = email
     getName(){
         return this.name
     }
-    getID(){
+    getId(){
         return this.id
     }
     getEmail() {
