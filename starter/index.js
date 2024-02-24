@@ -13,32 +13,33 @@ const render = require("./src/page-template.js");
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
 
-const ManagerQuestions = [
+const managerQuestions = [
     {
         type: 'input',
+        message: 'Enter team manager name:',
         name: 'Name',
-        message: 'What is the team Managers name?',
       },
 
       {
         type: 'input',
+        message: 'Enter employee ID:',
         name: 'EmployeeID',
-        message: 'What is the team Managers ID?',
       },
 
       {
         type: 'input',
+        message: 'Enter your Email',
         name: 'Email',
-        message: 'What is the team Managers Email?',
       },
 
       {
         type: 'input',
+        message: 'Enter your Office Number:',
         name: 'OfficeNumber',
-        message: 'What is the team Managers Office Number?',
       },
-
 ]
+
+const managerAnswers = await inquirer.prompt(managerQuestions);             // Manager answers will generate from the users inout to the questions
 
 
 
@@ -53,11 +54,11 @@ function writeToFile(fileName, data) {
 
 
 // function to initialize program
-function init() {
-    inquirer.prompt(ManagerQuestions)
-    .then(answers =>{
-        console.log(answers)   // getting our answers from all of our questions 
+function generateTeam() {
+    inquirer.prompt(managerQuestions)
+    .then(newTeamMember =>{
+        console.log("new team member")   
         //creating the TEAM.HTML file, and calling the generateManager function that needs the answers  
-        writeToFile("team.html", generateManager(answers))
+        writeToFile("team.html", generateTeam(newTeamMember))
     })
     }
