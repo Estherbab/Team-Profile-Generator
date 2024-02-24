@@ -13,7 +13,7 @@ const render = require("./src/page-template.js");
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
 
-const teamManagerQuestions = [
+const ManagerQuestions = [
     {
         type: 'input',
         name: 'Name',
@@ -39,3 +39,25 @@ const teamManagerQuestions = [
       },
 
 ]
+
+
+
+
+
+// function to write HTML file with 2 parameters file name and data
+function writeToFile(fileName, data) {        
+    fs.writeFile(fileName, data, (err) =>
+  err ? console.error(err) : console.log('Success!')
+);
+}
+
+
+// function to initialize program
+function init() {
+    inquirer.prompt(ManagerQuestions)
+    .then(answers =>{
+        console.log(answers)   // getting our answers from all of our questions 
+        //creating the TEAM.HTML file, and calling the generateManager function that needs the answers  
+        writeToFile("team.html", generateManager(answers))
+    })
+    }
