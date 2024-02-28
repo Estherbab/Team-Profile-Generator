@@ -112,7 +112,10 @@ function generateTeam() {
     );
     wholeTeam.push(manager);
     // Another inquirer. prompt to ask for the rest of the team
-    inquirer.prompt(menuQuestions).then((engineerAnswers) => {});
+    inquirer.prompt(menuQuestions).then((engineerAnswers) => {console.log(engineerAnswers); 
+    const engineer = new Engineer(engineerAnswers.name, engineerAnswers.id, engineerAnswers.email, engineerAnswers.github);
+    wholeTeam.push(engineer)
+    });
 
     //creating the TEAM.HTML file, and calling the generateManager function that needs the answers
     writeToFile("team.html", render(wholeTeam));
