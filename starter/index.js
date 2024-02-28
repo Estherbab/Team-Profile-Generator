@@ -41,6 +41,31 @@ const managerQuestions = [
 ];
 // const managerAnswers = inquirer.prompt(managerQuestions);             // Manager answers will generate from the users inout to the questions
 
+const menuQuestions = [
+  {
+    type: 'list',
+    name: 'menu',
+    message: 'Do you want to add an engineer?',
+    choices: ["YES", "NO",]
+  },
+
+  {
+    type: 'list',
+    name: 'menu',
+    message: 'Do you want to add an intern?',
+    choices: ["YES", "NO",]
+  },
+
+  {
+    type: 'list',
+    name: 'menu',
+    message: 'Do you want to finish building the team?',
+    choices: ["YES", "NO",]
+  },
+
+
+]
+
 const engineerQuestions = [
   {
     type: "input",
