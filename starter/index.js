@@ -147,8 +147,19 @@ function generateTeam() {
     );
     wholeTeam.push(manager);
 
-    // Another inquirer. prompt to ask for the rest of the team
+    // Another inquirer. prompt to ask for the rest of the team(Enginee)
     inquirer.prompt(menuQuestions).then((engineerAnswers) => {
+      console.log(Answers);
+      const menu = new Engineer(
+        menuAnswers.name,
+        menuAnswers.id,
+        menuAnswers.email,
+      );
+      wholeTeam.push(engineer);
+    });
+
+    // Inquirer.prompt to ask the Engineer Questions after user has selected Engineer from menu
+    inquirer.prompt(engineerQuestions).then((engineerAnswers) => {
       console.log(engineerAnswers);
       const engineer = new Engineer(
         engineerAnswers.name,
@@ -158,6 +169,7 @@ function generateTeam() {
       );
       wholeTeam.push(engineer);
     });
+
 
     //creating the TEAM.HTML file, and calling the generateManager function that needs the answers
     writeToFile("team.html", render(wholeTeam));
