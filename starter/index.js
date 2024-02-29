@@ -39,32 +39,30 @@ const managerQuestions = [
     name: "OfficeNumber",
   },
 ];
-// const managerAnswers = inquirer.prompt(managerQuestions);             // Manager answers will generate from the users inout to the questions
+// const managerAnswers = inquirer.prompt(managerQuestions);             // Manager answers will generate from the users input to the questions
 
 const menuQuestions = [
   {
-    type: 'list',
-    name: 'menu',
-    message: 'Do you want to add an engineer?',
-    choices: ["YES", "NO",]
+    type: "list",
+    name: "menu",
+    message: "Do you want to add an engineer?",
+    choices: ["YES", "NO"],
   },
 
   {
-    type: 'list',
-    name: 'menu',
-    message: 'Do you want to add an intern?',
-    choices: ["YES", "NO",]
+    type: "list",
+    name: "menu",
+    message: "Do you want to add an intern?",
+    choices: ["YES", "NO"],
   },
 
   {
-    type: 'list',
-    name: 'menu',
-    message: 'Do you want to finish building the team?',
-    choices: ["YES", "NO",]
+    type: "list",
+    name: "menu",
+    message: "Do you want to finish building the team?",
+    choices: ["YES", "NO"],
   },
-
-
-]
+];
 
 const engineerQuestions = [
   {
@@ -92,6 +90,36 @@ const engineerQuestions = [
   },
 ];
 
+const internQuestions = [
+  {
+    type: "input",
+    message: "Enter intern name:",
+    name: "Name",
+  },
+
+  {
+    type: "input",
+    message: "Enter intern ID:",
+    name: "Intern ID",
+  },
+
+  {
+    type: "input",
+    message: "Enter intern email:",
+    name: "Email",
+  },
+
+  {
+    type: "input",
+    message: "Enter school name:",
+    name: "School",
+  },
+];
+
+
+
+
+
 // function to write HTML file with 2 parameters file name and data
 function writeToFile(fileName, data) {
   fs.writeFile(fileName, data, (err) =>
@@ -111,10 +139,17 @@ function generateTeam() {
       managerAnswers.officenumber
     );
     wholeTeam.push(manager);
+
     // Another inquirer. prompt to ask for the rest of the team
-    inquirer.prompt(menuQuestions).then((engineerAnswers) => {console.log(engineerAnswers); 
-    const engineer = new Engineer(engineerAnswers.name, engineerAnswers.id, engineerAnswers.email, engineerAnswers.github);
-    wholeTeam.push(engineer)
+    inquirer.prompt(menuQuestions).then((engineerAnswers) => {
+      console.log(engineerAnswers);
+      const engineer = new Engineer(
+        engineerAnswers.name,
+        engineerAnswers.id,
+        engineerAnswers.email,
+        engineerAnswers.github
+      );
+      wholeTeam.push(engineer);
     });
 
     //creating the TEAM.HTML file, and calling the generateManager function that needs the answers
