@@ -136,6 +136,7 @@ function writeToFile(fileName, data) {
 
 // function to initialize program
 function generateTeam() {
+// Inquirer.prompt to ask the Manager Questions when the application starts
   inquirer.prompt(managerQuestions).then((managerAnswers) => {
     console.log(managerAnswers);
 
@@ -147,7 +148,7 @@ function generateTeam() {
     );
     wholeTeam.push(manager);
 
-    // Another inquirer. prompt to ask for the rest of the team(Enginee)
+    // Another inquirer. prompt to display the menu questions after the user has answered the engineer questions
     inquirer.prompt(menuQuestions).then((engineerAnswers) => {
       console.log(Answers);
       const menu = new Engineer(
@@ -155,10 +156,10 @@ function generateTeam() {
         menuAnswers.id,
         menuAnswers.email,
       );
-      wholeTeam.push(engineer);
+      wholeTeam.push(menu);
     });
 
-    // Inquirer.prompt to ask the Engineer Questions after user has selected Engineer from menu
+    // Inquirer.prompt to ask the Engineer Questions after user has selected Engineer from the menu options
     inquirer.prompt(engineerQuestions).then((engineerAnswers) => {
       console.log(engineerAnswers);
       const engineer = new Engineer(
@@ -170,6 +171,19 @@ function generateTeam() {
       wholeTeam.push(engineer);
     });
 
+    //Inquirer.prompt to ask the Intern Questions after user has selected Intern from the menu options
+    inquirer.prompt(internQuestions).then((internAnswers) => {
+      console.log(internAnswers);
+      const intern = new Intern(
+        internAnswers.name,
+        internAnswers.id,
+        internAnswers.email,
+        internAnswers.school
+      );
+      wholeTeam.push(intern);
+    });
+
+    //Inquirer.prompt to finish building the team
 
     //creating the TEAM.HTML file, and calling the generateManager function that needs the answers
     writeToFile("team.html", render(wholeTeam));
