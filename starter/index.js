@@ -12,6 +12,7 @@ const render = require("./src/page-template.js");
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
 
+// Array that will contain all the employee objects
 const wholeTeam = [];
 
 
@@ -148,7 +149,7 @@ function generateTeam() {
     );
     wholeTeam.push(manager);
 
-    // Another inquirer. prompt to display the menu questions after the user has answered the engineer questions
+    // Another inquirer. prompt to display the menu options after the user has answered the engineer questions
     inquirer.prompt(menuQuestions).then((engineerAnswers) => {
       console.log(Answers);
       const menu = new Engineer(
@@ -185,7 +186,8 @@ function generateTeam() {
 
     //Inquirer.prompt to finish building the team
 
-    //creating the TEAM.HTML file, and calling the generateManager function that needs the answers
+    //creating the TEAM.HTML file, and calling the render function and passing in an array containing all the employee objects
+    // Render function generates and returns a block of HTML with template divs for each employee
     writeToFile("team.html", render(wholeTeam));
   });
 }
