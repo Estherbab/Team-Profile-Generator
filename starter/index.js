@@ -14,6 +14,8 @@ const render = require("./src/page-template.js");
 
 const wholeTeam = [];
 
+
+// When the user starts the application they will be prompted to enter the team managers details
 const managerQuestions = [
   {
     type: "input",
@@ -41,6 +43,8 @@ const managerQuestions = [
 ];
 // const managerAnswers = inquirer.prompt(managerQuestions);             // Manager answers will generate from the users input to the questions
 
+
+// The menuquestions will be displayed after the user enters the managers details and the options below will be displayed
 const menuQuestions = [
   {
     type: "list",
@@ -64,6 +68,8 @@ const menuQuestions = [
   },
 ];
 
+
+// When the user selects Engineer from the menu an array of the questions below will be displayed, user prompted to answer them.
 const engineerQuestions = [
   {
     type: "input",
@@ -90,6 +96,7 @@ const engineerQuestions = [
   },
 ];
 
+// When the user selects intern from the menu an array of the questions below will be displayed, user prompted to answer them.
 const internQuestions = [
   {
     type: "input",
