@@ -25,19 +25,19 @@ const managerQuestions = [
 
   {
     type: "input",
-    message: "Enter employee ID:",
+    message: "Enter manager ID:",
     name: "ManagerID",
   },
 
   {
     type: "input",
-    message: "Enter your Email",
+    message: "Enter manager Email",
     name: "Email",
   },
 
   {
     type: "input",
-    message: "Enter your Office Number:",
+    message: "Enter manager Office Number:",
     name: "OfficeNumber",
   },
 ];
@@ -75,7 +75,7 @@ const engineerQuestions = [
 
   {
     type: "input",
-    message: "Enter Github usernam:",
+    message: "Enter Github username:",
     name: "Github",
   },
 ];
@@ -102,7 +102,7 @@ const internQuestions = [
 
   {
     type: "input",
-    message: "Enter school name:",
+    message: "Enter name of school intern attended:",
     name: "School",
   },
 ];
