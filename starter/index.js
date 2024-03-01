@@ -15,7 +15,6 @@ const render = require("./src/page-template.js");
 // Array that will contain all the employee objects
 const wholeTeam = [];
 
-
 // When the user starts the application they will be prompted to enter the team managers details
 const managerQuestions = [
   {
@@ -44,31 +43,15 @@ const managerQuestions = [
 ];
 // const managerAnswers = inquirer.prompt(managerQuestions);             // Manager answers will generate from the users input to the questions
 
-
 // The menuquestions will be displayed after the user enters the managers details and the options below will be displayed
 const menuQuestions = [
   {
     type: "list",
     name: "menu",
-    message: "Do you want to add an engineer?",
-    choices: ["YES", "NO"],
-  },
-
-  {
-    type: "list",
-    name: "menu",
-    message: "Do you want to add an intern?",
-    choices: ["YES", "NO"],
-  },
-
-  {
-    type: "list",
-    name: "menu",
-    message: "Do you want to finish building the team?",
-    choices: ["YES", "NO"],
+    message: "Do you want to add an engineer, intern or finish?",
+    choices: ["Engineer", "Intern", "Finish"],
   },
 ];
-
 
 // When the user selects Engineer from the menu an array of the questions below will be displayed, user prompted to answer them.
 const engineerQuestions = [
@@ -124,10 +107,6 @@ const internQuestions = [
   },
 ];
 
-
-
-
-
 // function to write HTML file with 2 parameters file name and data
 function writeToFile(fileName, data) {
   fs.writeFile(fileName, data, (err) =>
@@ -137,58 +116,70 @@ function writeToFile(fileName, data) {
 
 // function to initialize program
 function generateTeam() {
-// Inquirer.prompt to ask the Manager Questions when the application starts
+  // Inquirer.prompt to ask the Manager Questions when the application starts
   inquirer.prompt(managerQuestions).then((managerAnswers) => {
     console.log(managerAnswers);
 
     const manager = new Manager(
-      managerAnswers.name,
-      managerAnswers.id,
-      managerAnswers.email,
-      managerAnswers.officenumber
+      managerAnswers.Name,
+      managerAnswers.EmployeeID,
+      managerAnswers.Email,
+      managerAnswers.OfficeNumber
     );
     wholeTeam.push(manager);
-
-    // Another inquirer. prompt to display the menu options after the user has answered the engineer questions
-    inquirer.prompt(menuQuestions).then((engineerAnswers) => {
-      console.log(Answers);
-      const menu = new Engineer(
-        menuAnswers.name,
-        menuAnswers.id,
-        menuAnswers.email,
-      );
-      wholeTeam.push(menu);
-    });
-
-    // Inquirer.prompt to ask the Engineer Questions after user has selected Engineer from the menu options
-    inquirer.prompt(engineerQuestions).then((engineerAnswers) => {
-      console.log(engineerAnswers);
-      const engineer = new Engineer(
-        engineerAnswers.name,
-        engineerAnswers.id,
-        engineerAnswers.email,
-        engineerAnswers.github
-      );
-      wholeTeam.push(engineer);
-    });
-
-    //Inquirer.prompt to ask the Intern Questions after user has selected Intern from the menu options
-    inquirer.prompt(internQuestions).then((internAnswers) => {
-      console.log(internAnswers);
-      const intern = new Intern(
-        internAnswers.name,
-        internAnswers.id,
-        internAnswers.email,
-        internAnswers.school
-      );
-      wholeTeam.push(intern);
-    });
+    displayMenu();
 
     //Inquirer.prompt to finish building the team
 
     //creating the TEAM.HTML file, and calling the render function and passing in an array containing all the employee objects
     // Render function generates and returns a block of HTML with template divs for each employee
-    writeToFile("team.html", render(wholeTeam));
+  });
+}
+
+function displayMenu() {
+  // Another inquirer. prompt to display the menu options after the user has answered the engineer questions
+  inquirer.prompt(menuQuestions).then((menuAnswers) => {
+    console.log(menuAnswers.menu);
+
+    if (menuAnswers.menu === "Engineer") {
+      displayEngineer();
+    } else if (menuAnswers.menu === "Intern") {
+      displayIntern();
+    } else {
+      writeToFile("team.html", render(wholeTeam));
+    }
+  });
+}
+
+function displayEngineer() {
+  // Inquirer.prompt to ask the Engineer Questions after user has selected Engineer from the menu options
+  inquirer.prompt(engineerQuestions).then((engineerAnswers) => {
+    console.log(engineerAnswers);
+    const engineer = new Engineer(
+      engineerAnswers.name,
+      engineerAnswers.id,
+      engineerAnswers.email,
+      engineerAnswers.github
+    );
+    wholeTeam.push(engineer);
+
+    displayMenu();
+  });
+}
+
+function displayIntern() {
+  //Inquirer.prompt to ask the Intern Questions after user has selected Intern from the menu options
+  inquirer.prompt(internQuestions).then((internAnswers) => {
+    console.log(internAnswers);
+    const intern = new Intern(
+      internAnswers.name,
+      internAnswers.id,
+      internAnswers.email,
+      internAnswers.school
+    );
+    wholeTeam.push(intern);
+
+    displayMenu();
   });
 }
 
