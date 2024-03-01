@@ -26,7 +26,7 @@ const managerQuestions = [
   {
     type: "input",
     message: "Enter employee ID:",
-    name: "EmployeeID",
+    name: "ManagerID",
   },
 
   {
@@ -122,9 +122,9 @@ function generateTeam() {
 
     const manager = new Manager(
       managerAnswers.Name,
-      managerAnswers.EmployeeID,
+      managerAnswers.ManagerID,
       managerAnswers.Email,
-      managerAnswers.OfficeNumber
+      managerAnswers.OfficeNumber,
     );
     wholeTeam.push(manager);
     displayMenu();
@@ -172,10 +172,10 @@ function displayIntern() {
   inquirer.prompt(internQuestions).then((internAnswers) => {
     console.log(internAnswers);
     const intern = new Intern(
-      internAnswers.name,
-      internAnswers.id,
-      internAnswers.email,
-      internAnswers.school
+      internAnswers.Name,
+      internAnswers.InternID,
+      internAnswers.Email,
+      internAnswers.School,
     );
     wholeTeam.push(intern);
 
