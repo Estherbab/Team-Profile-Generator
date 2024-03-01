@@ -64,7 +64,7 @@ const engineerQuestions = [
   {
     type: "input",
     message: "Enter engineer ID:",
-    name: "Engineer ID",
+    name: "EngineerID",
   },
 
   {
@@ -91,7 +91,7 @@ const internQuestions = [
   {
     type: "input",
     message: "Enter intern ID:",
-    name: "Intern ID",
+    name: "InternID",
   },
 
   {
@@ -156,10 +156,10 @@ function displayEngineer() {
   inquirer.prompt(engineerQuestions).then((engineerAnswers) => {
     console.log(engineerAnswers);
     const engineer = new Engineer(
-      engineerAnswers.name,
-      engineerAnswers.id,
-      engineerAnswers.email,
-      engineerAnswers.github
+      engineerAnswers.Name,
+      engineerAnswers.EngineerID,
+      engineerAnswers.Email,
+      engineerAnswers.Github,
     );
     wholeTeam.push(engineer);
 
