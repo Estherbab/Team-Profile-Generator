@@ -13,12 +13,12 @@ Live link to deployed application [link to deployed application]().
 
 
 
-* [Classes](#Classes)
-* [Inquirer.promptManager](#Inquirer.promptManager)
-* [Inquirer.promptMenu](#Inquirer.promptMenu)
-* [Inquirer.promptEngineer](#Inquirer.promptEngineer)
-* [Inquirer.promptIntern](#Inquirer.promptIntern)
-* [GenerateHTML](#GenerateHTML)
+* [Classes](#classes)
+* [Inquirer.promptManager](#inquirerpromptmanager)
+* [Inquirer.promptMenu](#inquirerpromptmenu)
+* [Inquirer.promptEngineer](#inquirerpromptengineer)
+* [Inquirer.promptIntern](#inquirerpromptintern)
+* [Generatehtml](#generatehtml)
 * [Credits](#credits)
 * [License](#license)
 
