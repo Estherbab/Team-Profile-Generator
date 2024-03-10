@@ -23,6 +23,7 @@ Live link to deployed application [link to deployed application]().
 * [License](#license)
 
 
+---
 
 ## Classes
 The screenshot below shows
@@ -31,76 +32,63 @@ The screenshot below shows
 
 
 
+---
 
 ## Inquirer.promptManager
-The screenshot below shows
+The screenshot below shows the team manager array of questions that will be displayed once the application starts, the second screenshot shows the inquirer.prompt that will prompt the questions to be displayed and answered in the terminal.
 
-![the following image shows the webpages functionality]()
+![the following image shows the webpages functionality](starter/assets/images/manager%20questions%20array.png)
+![the following image shows the webpages functionality](starter/assets/images/manager%20inquirer%20prompt.png)
+
+
+
 
 
 
 
 
 ---
-
-
-The screenshot below shows
-
-![the following image shows the webpages functionality]()
-
-
-
-
-
-
-
 
 ## Inquirer.promptMenu
 
-The screenshot below shows
+The screenshots below shows the menu questions that will appear as soon as the user finishes answering the manager questions. The menu questions are displayed in list form with the user selecting either engineer, intern or finish building the team. The second screenshot shows the function to prompt and display each of the menu options which is written using an if statement.
 
-![the following image shows the webpages functionality]()
+![the following image shows the webpages functionality](starter/assets/images/menu%20array.png)
+![the following image shows the webpages functionality](starter/assets/images/display%20menu.png)
 
 
+---
 
 ## Inquirer.promptEngineer
 
-The screenshot below shows
+The screenshot below shows the engineer array of questions that will be displayed when the user selects engineer from the menu options. The display engineer function is to display all the questions in the array and the inquirer.prompt is to prompt the user to answer each question in the terminal.
 
-![the following image shows the webpages functionality]()
+![the following image shows the webpages functionality](starter/assets/images/engineer%20array.png)
+![the following image shows the webpages functionality](starter/assets/images/engineer%20prompt.png)
 
 
+---
 
 ## Inquirer.promptIntern
 
-The screenshot below shows
+The screenshot below shows the intern array questions that will be displayed when the user selects intern from the display menu options. The intern array questions will be displayed and the inquirer.prompt will prompt the user to answer the questions in the terminal
 
-![the following image shows the webpages functionality]()
-
-
----
-
-
-
-This screenshot shows 
-
-![the following image shows the webpages functionality]()
+![the following image shows the webpages functionality](starter/assets/images/intern%20array.png)
+![the following image shows the webpages functionality](starter/assets/images/intern%20prompt.png)
 
 
 ---
-
-
-
-This screenshot shows
-
-![the following image shows the webpages functionality]()
-
 
 ## GenerateHTML
 
-This screenshot shows the HTML template generated
+This screenshot shows the HTML template generated after the user fills in all the questions for manager, enginner and intern and finished building the team. The second screenshot shows the preview of the HTML generated team when viewed on a live server.
 
-![the following image shows the webpages functionality]()
+
+![HTML generated questions](starter/assets/images/html%20generated%20questions.png)
+
+
+
+![Team Profile Screenshot](starter/assets/images/Team%20profile%20generator%20final.png)
 
 
 
@@ -111,12 +99,7 @@ This screenshot shows the HTML template generated
 ## Credits
 
 * Esther Babirye
-* W3schools
-* Bootstrap
 * TA Kayvon
-
-
-
 
 
 
