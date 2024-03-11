@@ -90,7 +90,7 @@ The screenshot below shows the intern array questions that will be displayed whe
 
 ## GenerateHTML
 
-This screenshot shows the HTML template generated after the user fills in all the questions for manager, enginner and intern and finishes building the team. The second screenshot shows the preview of the HTML generated team when viewed on a live server.
+This screenshot shows the HTML template generated after the user fills in all the questions for manager, engineer and intern and finishes building the team. The second screenshot shows the preview of the HTML generated team when viewed on a live server.
 
 
 ![HTML generated questions](starter/assets/images/html%20generated%20questions.png)
