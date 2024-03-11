@@ -28,7 +28,13 @@ Live link to deployed application [link to deployed application]().
 ## Classes
 The screenshot below shows
 
-![the following image shows the webpages functionality]()
+![the following image shows the webpages functionality](starter/assets/images/employee%20class.png)
+
+![the following image shows the webpages functionality](starter/assets/images/engineer%20class.png)
+
+![the following image shows the webpages functionality](starter/assets/images/manager%20class.png)
+
+![the following image shows the webpages functionality](starter/assets/images/intern%20class.png)
 
 
 
