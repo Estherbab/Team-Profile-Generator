@@ -6,6 +6,8 @@ In this challenge I will be creating a team profile generator by using the start
 
 Live link to deployed application [link to deployed application]().
 
+![the following image shows the webpages functionality](starter/assets/images/Team%20profile%20generator%20final.png)
+
 ---
 
 
